@@ -15,9 +15,6 @@ import { Component, Input } from '@angular/core';
       .example-card {
         max-width: 200px;
       }
-      .mat-grid-tile {
-        margin-top: 3rem;
-      }
     `
   ]
 })

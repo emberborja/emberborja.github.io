@@ -11,6 +11,7 @@ import { SuperheroListComponent } from './superhero-list/superhero-list.componen
 import { HttpClientModule } from '@angular/common/http';
 import { SuperheroGridComponent } from './superhero-grid/superhero-grid.component';
 import { SuperheroImageCardComponent } from './superhero-image-card/superhero-image-card.component';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SuperheroImageCardComponent } from './superhero-image-card/superhero-im
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialExampleModule,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
