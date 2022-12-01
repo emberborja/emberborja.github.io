@@ -1,5 +1,7 @@
-import { Superhero } from './../superhero';
+import { SuperheroDataService } from './../superhero-data.service';
+import { ISuperhero } from './../superhero';
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-superhero-tabs',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
     <p>
       <mat-tab-group animationDuration="2000ms">
         <mat-tab label="Superhero List">
-          <app-superhero-list [superheroData]="superheroData"></app-superhero-list>
+          <app-superhero-list [superheroData$]="superheroData$"></app-superhero-list>
         </mat-tab>
         <mat-tab label="Superhero Grid"> Content 2 </mat-tab>
       </mat-tab-group>
@@ -22,16 +24,16 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class SuperheroTabsComponent implements OnInit {
-  superheroData: Superhero[] = [];
+  superheroData$: Observable<ISuperhero[]> = of();
 
-  constructor () {}
+  constructor (private superHeroDataService: SuperheroDataService) {}
 
   ngOnInit(): void {
     this.fetchSuperheroData()
   }
 
   fetchSuperheroData() {
-    // this.superheroData
+    this.superheroData$ = this.superHeroDataService.getData();
   }
 
 }
