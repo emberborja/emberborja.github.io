@@ -13,7 +13,7 @@ import { Component, Input } from '@angular/core';
   styles: [
     `
       .example-card {
-        max-width: 200px;
+        max-width: 220px;
       }
     `
   ]
