@@ -11,7 +11,9 @@ import { Observable, of } from 'rxjs';
         <mat-tab label="Superhero List">
           <app-superhero-list [superheroData$]="superheroData$"></app-superhero-list>
         </mat-tab>
-        <mat-tab label="Superhero Grid"> Content 2 </mat-tab>
+        <mat-tab label="Superhero Grid">
+          <app-superhero-grid [superheroData$]="superheroData$"></app-superhero-grid>
+        </mat-tab>
       </mat-tab-group>
     </p>
   `,

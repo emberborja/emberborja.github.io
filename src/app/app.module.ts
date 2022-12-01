@@ -9,13 +9,17 @@ import { MaterialExampleModule } from '../material.module';
 import { ToolbarTopComponent } from './toolbar-top/toolbar-top.component';
 import { SuperheroListComponent } from './superhero-list/superhero-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SuperheroGridComponent } from './superhero-grid/superhero-grid.component';
+import { SuperheroImageCardComponent } from './superhero-image-card/superhero-image-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SuperheroTabsComponent,
     ToolbarTopComponent,
-    SuperheroListComponent
+    SuperheroListComponent,
+    SuperheroGridComponent,
+    SuperheroImageCardComponent
   ],
   imports: [
     BrowserModule,
