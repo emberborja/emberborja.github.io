@@ -5,14 +5,22 @@ import { Component } from '@angular/core';
   template: `
     <p>
       <mat-toolbar color="primary">
-        <span>Suphero Intelligence</span>
+        <span>Suphero Intelligence Agency</span>
         <span class="example-spacer"></span>
-        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-          <mat-icon>star</mat-icon>
-        </button>
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-          <mat-icon>share</mat-icon>
-        </button>
+        <a href="https://github.com/emberborja/angular-example-ember" target="_blank"
+          mat-icon-button 
+          class="example-icon favorite-icon" 
+          aria-label="Star this project on GitHub">
+            <mat-icon>star</mat-icon>
+        </a>
+        <share-buttons theme="circles-dark"
+          [include]="['linkedin']"
+          [showIcon]="true"
+          [showText]="false"
+          url="https://en.wikipedia.org/wiki/Squirrel_Girl"
+          description="Linkedin Share Button"
+          class="example-icon">
+        </share-buttons>
       </mat-toolbar>
     </p>
   `,

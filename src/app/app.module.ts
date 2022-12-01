@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SuperheroGridComponent } from './superhero-grid/superhero-grid.component';
 import { SuperheroImageCardComponent } from './superhero-image-card/superhero-image-card.component';
 import {ScrollingModule} from '@angular/cdk/scrolling';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
     BrowserAnimationsModule,
     MaterialExampleModule,
     HttpClientModule,
-    ScrollingModule
+    ScrollingModule,
+    ShareButtonsModule,
+    ShareIconsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
