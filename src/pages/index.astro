@@ -4,10 +4,21 @@ import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import HappyBirthdayPeyton from '../components/HappyBirthdayPeyton.astro'
 ---
 
 <DefaultLayout title="Ember Borja">
-  <Hero />
+  <ContentMedia imgSrc="/bucbday.webp" reverseImg={true}>
+    <h1>Happy Birtdhay Peyton!</h1>
+    <p class="text-2xl">Wishing you all the best as you get older.</p>
+  </ContentMedia>
+  <section>
+    <div class="container">
+      <HappyBirthdayPeyton />
+    </div>
+  </section>
+
+  <!-- <Hero />
   <section class="my-64">
     <div class="container">
       <h2 class="mb-16 text-6xl">Features</h2>
@@ -69,5 +80,5 @@ import ContentMedia from '../components/ContentMedia.astro'
         <Counter count="18+" title="Months" sub="Since launch" />
       </div>
     </div>
-  </section>
+  </section> -->
 </DefaultLayout>

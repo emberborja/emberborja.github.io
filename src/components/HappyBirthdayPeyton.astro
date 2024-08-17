@@ -1,0 +1,56 @@
+<button id="restartBTN">Fireworks</button>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+  var duration = 15 * 1000
+  var animationEnd = Date.now() + duration
+  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min
+  }
+
+  function doConfetti() {
+    console.log('do confetti')
+    var timeLeft = animationEnd - Date.now()
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval)
+    }
+
+    var particleCount = 50 * (timeLeft / duration)
+    // since particles fall down, start a bit higher than random
+    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } })
+    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } })
+  }
+
+  var interval = setInterval(doConfetti, 250)
+
+  function restartFireworks() {
+    console.log('restart')
+    var _duration = 15 * 1000
+    var _animationEnd = Date.now() + _duration
+    var _defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 }
+
+    function _randomInRange(min, max) {
+      return Math.random() * (max - min) + min
+    }
+
+    function _doConfetti() {
+      var _timeLeft = _animationEnd - Date.now()
+
+      if (_timeLeft <= 0) {
+        return clearInterval(_interval)
+      }
+
+      var _particleCount = 50 * (_timeLeft / _duration)
+      // since particles fall down, start a bit higher than random
+      confetti({ ..._defaults, _particleCount, origin: { x: _randomInRange(0.1, 0.3), y: Math.random() - 0.2 } })
+      confetti({ ..._defaults, _particleCount, origin: { x: _randomInRange(0.7, 0.9), y: Math.random() - 0.2 } })
+    }
+
+    var _interval = setInterval(_doConfetti, 250)
+  }
+
+  document.getElementById('restartBTN')?.addEventListener('click', restartFireworks)
+</script>
